@@ -9,7 +9,7 @@ const Login = ({ setrole, setauth }) => {
     pwd: "",
   });
   const [error, setError] = useState("");
-  const user = users.find((user) => user.email == formState.email);
+  const user = users.find((user) => user.email === formState.email);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event?.preventDefault();
@@ -38,9 +38,7 @@ const Login = ({ setrole, setauth }) => {
           <input autoFocus type="email" name="email" onChange={handleChange} />
           <label htmlFor="pwd">Password</label>
           <input type="password" name="pwd" onChange={handleChange} />
-          <a href="" className="forgot-p">
-            Forgot password?
-          </a>
+          <a href="/" className="forgot-p">Forgot password?</a>
           <span className="login-error">{error}</span>
           <button type="submit"> Login</button>
         </form>
