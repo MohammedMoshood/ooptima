@@ -33,6 +33,10 @@
   border-bottom: 1px solid lightgrey;
   background: none;
 }
+.login-form input:focus {
+  border-color: rgb(98, 147, 255);
+  border-width: 2px;
+}
 form .top {
   background-color: #232323;
   width: 250px;

@@ -35,7 +35,7 @@ const Login = ({ setrole, setauth }) => {
         <form onSubmit={handleSubmit} className="login-form">
           <div className="top"> Welcome</div>
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" onChange={handleChange} />
+          <input autoFocus type="email" name="email" onChange={handleChange} />
           <label htmlFor="pwd">Password</label>
           <input type="password" name="pwd" onChange={handleChange} />
           <a href="" className="forgot-p">
