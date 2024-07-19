@@ -1,0 +1,52 @@
+.students-list {
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.students-list p {
+  color: grey;
+}
+.filter-group{
+  
+}
+.students-table {
+  display: flex;
+  flex-direction: column;
+}
+.single-student-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid lightgrey;
+}
+.single-student-header span {
+  font-weight: 800;
+}
+.f-n {
+  width: 20%;
+}
+.em {
+  width: 25%;
+}
+.course {
+  width: 25%;
+}
+.fa {
+  width: 10%;
+}
+.l-p {
+  width: 10%;
+}
+.date-e {
+  width: 10%;
+}
+.single-student {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  /* font-size: 12px; */
+}
+.f-n a {
+  color: black;
+}

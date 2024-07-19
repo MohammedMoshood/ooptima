@@ -1,0 +1,76 @@
+.course-data {
+  overflow: hidden;
+  display: flex;
+  height: calc(100svh - 60px);
+  gap: 25px;
+}
+
+.curriculum-panel {
+  width: 20%;
+  padding: 10px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid lightgrey;
+}
+.course-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.course-progress-bar {
+  width: 100%;
+  position: relative;
+  height: 8px;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+.course-progress-bar::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: linear-gradient(#151515, rgb(87, 87, 87));
+  width: 10%;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.course-curriculum {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.course-curriculum .text {
+  font-weight: bold;
+}
+.course-curriculum .topic {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.topic-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.sub-topic {
+  font-size: 14px;
+  display: flex;
+  cursor: pointer;
+  color: rgb(160, 160, 160);
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s ease-in-out all;
+}
+.sub-topic:hover {
+  color: black;
+}
+.course-content {
+  width: 80%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+.course-title {
+  font-size: 32px;
+  font-weight: bold;
+}

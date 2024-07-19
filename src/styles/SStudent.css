@@ -1,0 +1,93 @@
+.sstudent {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.bottom-profile {
+  display: flex;
+  gap: 50px;
+}
+
+.side-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 25%;
+  height: max-content;
+  background-color: #2323230c;
+  border: 1px solid #afafaf;
+}
+.side-info img {
+  width: 120px;
+  border-radius: 50%;
+}
+.bottom-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  gap: 10px;
+}
+.single-info {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.side-overview {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+.bottom-overview {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+.info-card {
+  width: 30%;
+  background-color: #2323230c;
+  border: 1px solid #afafaf;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.session-card {
+  width: 23%;
+  background-color: #2323230c;
+  border: 1px solid #afafaf;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.student-profile {
+  width: 100%;
+  display: flex;
+  background-color: #2323230c;
+  border: 1px solid #afafaf;
+  padding: 25px;
+  flex-direction: column;
+}
+
+.p-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  gap: 25px 0px;
+}
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+}
