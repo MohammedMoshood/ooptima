@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import StudentList from "../../components/StudentList";
 
 const Students = ({ setcs }) => {

@@ -4,7 +4,6 @@ export const users = [
     lastname: "Mohammed",
     role: "student",
     faction: "CS04",
-    role: "student",
     studentid: "CSO4-001",
     email: "waleopeyemi8@gmail.com",
     phone: "+2347049698931",

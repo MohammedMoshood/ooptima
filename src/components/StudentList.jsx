@@ -27,19 +27,22 @@ const StudentList = ({ setcs }) => {
             dateenrolled,
             studentid,
           } = st;
+
           return (
-            <div className="single-student">
-              <span className="f-n" onClick={() => setcs(users[i])}>
-                <Link
-                  to={`/students/${studentid}`}
-                >{`${firstname}  ${lastname}`}</Link>
-              </span>
-              <span className="em">{email}</span>
-              <span className="course">{course}</span>
-              <span className="fa">{faction}</span>
-              <span className="l-p">{learningprogress}</span>
-              <span className="date-e">{dateenrolled}</span>
-            </div>
+            st.role !== "instructor" && (
+              <div className="single-student">
+                <span className="f-n" onClick={() => setcs(users[i])}>
+                  <Link
+                    to={`/students/${studentid}`}
+                  >{`${firstname}  ${lastname}`}</Link>
+                </span>
+                <span className="em">{email}</span>
+                <span className="course">{course}</span>
+                <span className="fa">{faction}</span>
+                <span className="l-p">{learningprogress}</span>
+                <span className="date-e">{dateenrolled}</span>
+              </div>
+            )
           );
         })}
       </div>
