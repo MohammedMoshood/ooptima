@@ -138,7 +138,9 @@ const Modal = ({ user, setModal }) => {
             );
           })}
         </div>
-        <span style={{ color: "grey" }}>What did you appreciate Most?</span>
+        <span style={{ color: "grey" }}>
+          What did you appreciate Most? (You can select more than one)
+        </span>
         <div className="list">
           {questions[current].list?.map((elm, i) => {
             return (
