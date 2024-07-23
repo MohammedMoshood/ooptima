@@ -35,7 +35,10 @@ const StudentList = ({ setcs, user }) => {
           return (
             st.role !== "instructor" && (
               <div key={i} className="single-student">
-                <span className="f-n" onClick={() => setcs(filteredStudents[i])}>
+                <span
+                  className="f-n"
+                  onClick={() => setcs(filteredStudents[i])}
+                >
                   <Link
                     to={`/students/${studentid}`}
                   >{`${firstname}  ${lastname}`}</Link>

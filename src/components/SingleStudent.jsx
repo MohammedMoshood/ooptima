@@ -14,7 +14,7 @@ const SingleStudent = ({ cs }) => {
     firstname,
     lastname,
     course,
-    faction,
+    factions,
     dateenrolled,
     expirydate,
     learningprogress,
@@ -48,7 +48,7 @@ const SingleStudent = ({ cs }) => {
           <div className="bottom-info">
             <div className="single-info">
               <b>Faction</b>
-              <p style={{ color: "#afafaf" }}>{faction}</p>
+              <p style={{ color: "#afafaf" }}>{factions[0]}</p>
             </div>
             <div className="single-info">
               <b>Subscription Date</b>
