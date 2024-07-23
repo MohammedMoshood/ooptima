@@ -502,7 +502,7 @@ export const users = [
     phone: "+2348034567893",
     dateofbirth: "1997-05-18",
     address: "54, Ikot Ekpene Road, Akwa Ibom",
-    password: "mypassword321",
+    password: "mypassword789",
     gender: "Male",
     education: "Obafemi Awolowo University",
     typeofstudy: "Phd Computer Education",
