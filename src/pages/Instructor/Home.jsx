@@ -1,10 +1,10 @@
 import React from "react";
 import Dashboard from "../../components/Dashboard";
 
-const Home = () => {
+const Home = ({user}) => {
   return (
     <main>
-      <Dashboard/>
+      <Dashboard user={user}/>
     </main>
   );
 };

@@ -15,7 +15,7 @@ nav {
   /* background-color: red; */
 }
 .nav-left {
-  width: 75%;
+  width: 70%;
   display: flex;
   gap: 50px;
 }
@@ -50,7 +50,8 @@ nav {
 }
 .nav-right {
   display: flex;
-  gap: 50px;
+  gap: 25px;
+  align-items: center;
 }
 .user-info {
   display: flex;
@@ -67,6 +68,7 @@ nav {
   border-radius: 5px;
   width: 100px;
   cursor: pointer;
+  height: 30px;
   color: white;
   transition: 0.3s ease-in-out all;
 }
@@ -104,4 +106,9 @@ nav {
 .drop-down li:hover {
   background-color: #15151593;
   color: white;
+}
+.user-img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }

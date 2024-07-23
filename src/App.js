@@ -7,22 +7,39 @@ import Login from "./pages/Login";
 import Student from "./pages/Instructor/Student";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
+import dummy from "./assets/dummy.jpg";
+import dummy1 from "./assets/dummy1.jpg";
+import dummy2 from "./assets/dummy2.jpg";
+import dummy3 from "./assets/dummy3.jpg";
+import dummy4 from "./assets/dummy4.jpg";
+import dummy5 from "./assets/dummy5.jpg";
+import Modal from "./components/Modal";
 function App() {
   const [currentStudent, setCurrentStudent] = useState(defaultProp);
   const [isauth, setIsAuth] = useState(false);
-  const [role, setRole] = useState("");
+  const [isModal, setIsModal] = useState(true);
+  const [user, setUser] = useState({});
+  const dummyarray = [dummy, dummy1, dummy2, dummy3, dummy4, dummy5];
+  const randimg = dummyarray[Math.floor(Math.random() * dummyarray.length)];
 
   return (
     <div className="App">
-      {isauth && role === "instructor" ? (
+      {isauth && user ? (
         <>
-          <Navbar setauth={setIsAuth} setrole={setRole} />
+          {isModal && <Modal setModal={setIsModal} user={user} />}
+
+          <Navbar
+            randimg={randimg}
+            user={user}
+            setauth={setIsAuth}
+            setuser={setUser}
+          />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/course/:courseId" element={<Course />} />
+            <Route path="/" element={<Home user={user} />} />
+            <Route path="/course/:courseId" element={<Course user={user} />} />
             <Route
               path="/students"
-              element={<Students setcs={setCurrentStudent} />}
+              element={<Students user={user} setcs={setCurrentStudent} />}
             />
             <Route
               path="/students/:studentId"
@@ -34,7 +51,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Login setauth={setIsAuth} setrole={setRole} />}
+            element={<Login setModal={setIsModal} setauth={setIsAuth} setuser={setUser} />}
           />
         </Routes>
       )}

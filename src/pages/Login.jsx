@@ -3,7 +3,7 @@ import "../styles/Login.css";
 import biglogo from "../assets/biglogo.png";
 import { users } from "../data/student";
 import { useNavigate } from "react-router";
-const Login = ({ setrole, setauth }) => {
+const Login = ({ setauth, setuser, setModal }) => {
   const [formState, setFormState] = useState({
     email: "",
     pwd: "",
@@ -15,8 +15,9 @@ const Login = ({ setrole, setauth }) => {
     event?.preventDefault();
     if (user && user.password === formState.pwd) {
       setauth(true);
-      setrole(user.role);
+      setuser(user);
       navigate("/");
+      setModal(true);
     } else {
       console.error("invalid credentials");
       setError("Invalid credentials");
@@ -38,7 +39,9 @@ const Login = ({ setrole, setauth }) => {
           <input autoFocus type="email" name="email" onChange={handleChange} />
           <label htmlFor="pwd">Password</label>
           <input type="password" name="pwd" onChange={handleChange} />
-          <a href="/" className="forgot-p">Forgot password?</a>
+          <a href="/" className="forgot-p">
+            Forgot password?
+          </a>
           <span className="login-error">{error}</span>
           <button type="submit"> Login</button>
         </form>

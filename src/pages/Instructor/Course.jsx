@@ -1,10 +1,10 @@
 import React from 'react'
 import CourseData from '../../components/CourseData'
 
-const Course = () => {
+const Course = ({user}) => {
   return (
     <main>
-      <CourseData/>
+      <CourseData user={user} />
     </main>
   )
 }

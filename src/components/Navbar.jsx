@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "../styles/Nav.css";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-const Navbar = ({ setrole, setauth }) => {
+const Navbar = ({ randimg, setuser, setauth, user }) => {
   const [isMenu, setIsMenu] = useState(false);
   const { pathname } = useLocation();
+  const { firstname, lastname, role } = user;
   const navigate = useNavigate();
-  console.log(pathname);
   return (
     <nav>
       <div className="nav">
@@ -24,7 +25,8 @@ const Navbar = ({ setrole, setauth }) => {
               onClick={() => setIsMenu(!isMenu)}
               style={{ position: "relative" }}
             >
-              Teach {!isMenu ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
+              {user.role === "instructor" ? "Teach" : "Learn"}
+              {!isMenu ? <MdKeyboardArrowDown /> : <MdKeyboardArrowUp />}
               <div className={`drop-down ${!isMenu && "menu-closed"} `}>
                 <ul>
                   <Link>
@@ -39,28 +41,33 @@ const Navbar = ({ setrole, setauth }) => {
                 </ul>
               </div>
             </li>
-
-            <Link to="/students">
-              <li className={pathname.includes(`/students`) ? "active" : ""}>
-                {" "}
-                My Students
-              </li>
-            </Link>
-            <Link>
-              <li> Lab Phase</li>
-            </Link>
+            {user.role === "instructor" ? (
+              <>
+                <Link to="/students">
+                  <li
+                    className={pathname.includes(`/students`) ? "active" : ""}
+                  >
+                    My Students
+                  </li>
+                </Link>
+                <Link>
+                  <li> Lab Phase</li>
+                </Link>
+              </>
+            ) : null}
           </ul>
         </div>
 
         <div className="nav-right">
+          <img src={randimg} alt="user" className="user-img" />
           <div className="user-info">
-            <span className="name">Mohammed Moshood</span>
-            <span className="role">Instructor</span>
+            <span className="name">{lastname + " " + firstname}</span>
+            <span className="role">{role}</span>
           </div>
           <button
             onClick={() => {
               setauth(false);
-              setrole("");
+              setuser({});
               navigate("/");
             }}
             className="logout"

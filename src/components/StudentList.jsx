@@ -2,7 +2,11 @@ import React from "react";
 import "../styles/Student.css";
 import { users } from "../data/student";
 import { Link } from "react-router-dom";
-const StudentList = ({ setcs }) => {
+const StudentList = ({ setcs, user }) => {
+  const filteredStudents = users.filter((student) =>
+    student.factions.some((faction) => user.factions.includes(faction))
+  );
+  console.log(filteredStudents);
   return (
     <section className="students-list">
       <p>Students List</p>
@@ -16,11 +20,11 @@ const StudentList = ({ setcs }) => {
           <span className="l-p">Progress</span>
           <span className="date-e">Date Enrolled</span>
         </div>
-        {users.map((st, i) => {
+        {filteredStudents.map((st, i) => {
           const {
             firstname,
             lastname,
-            faction,
+            factions,
             email,
             course,
             learningprogress,
@@ -30,7 +34,7 @@ const StudentList = ({ setcs }) => {
 
           return (
             st.role !== "instructor" && (
-              <div className="single-student">
+              <div key={i} className="single-student">
                 <span className="f-n" onClick={() => setcs(users[i])}>
                   <Link
                     to={`/students/${studentid}`}
@@ -38,7 +42,7 @@ const StudentList = ({ setcs }) => {
                 </span>
                 <span className="em">{email}</span>
                 <span className="course">{course}</span>
-                <span className="fa">{faction}</span>
+                <span className="fa">{factions.map((f) => f)}</span>
                 <span className="l-p">{learningprogress}</span>
                 <span className="date-e">{dateenrolled}</span>
               </div>

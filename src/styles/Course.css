@@ -25,13 +25,14 @@
   background-color: lightgrey;
   border-radius: 5px;
 }
-.course-progress-bar::after {
+.course-progress-bar-after {
   position: absolute;
   content: "";
   top: 0;
+  transform-origin: left;
+  transition: 0.3s ease-in-out all;
   left: 0;
   background: linear-gradient(#151515, rgb(87, 87, 87));
-  width: 10%;
   border-radius: 5px;
   height: 100%;
 }
