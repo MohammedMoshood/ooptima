@@ -58,10 +58,6 @@ const SingleStudent = ({ cs }) => {
               <b>Expiry Date</b>
               <p style={{ color: "#afafaf" }}>{expirydate}</p>
             </div>
-            <div className="single-info">
-              <b>Faction</b>
-              <p style={{ color: "#afafaf" }}>{faction}</p>
-            </div>
           </div>
         </div>
         <div className="side-overview">
